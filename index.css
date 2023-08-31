@@ -906,6 +906,7 @@ ol {
   padding: 15px 20px;
   border-top: 1px solid transparent;
   display: none;
+  z-index: 100;
 }
 
 .nav-two .search-box .search-content .left {
@@ -1144,7 +1145,10 @@ ol {
   height: 43px;
   line-height: 43px;
 }
-
+.nav-three>ul>li:last-child .added li:hover {
+  cursor: pointer;
+  color: rgb(247, 0, 119);
+}
 .nav-three>ul>li:last-child .added li:first-child::after {
   content: '';
   position: absolute;
@@ -1191,7 +1195,7 @@ ol {
   padding-left: 35px;
 }
 
-.nav-three>ul>li:first-child .second>li>span:hover {
+.nav-three>ul>li:first-child .second>li:hover>span{
   color: rgb(247, 0, 119);
   cursor: pointer;
 }
@@ -1203,7 +1207,7 @@ ol {
   top: 0;
   left: 156px;
   display: flex;
-  box-shadow: 0 0 2px lightgray;
+  box-shadow: 1px 0 1px lightgray;
 }
 
 .nav-three>ul>li:first-child .second>li>div .left {
@@ -1597,7 +1601,7 @@ ol {
   top: 217px;
   left: 57px;
   background-color: white;
-  border: 1px solid lightgray;
+  border-radius: 4px;
 }
 
 #content .every-day .top .right>div:nth-child(2) .tu {
@@ -1607,7 +1611,7 @@ ol {
   top: 217px;
   left: 235px;
   background-color: white;
-  border: 1px solid lightgray;
+  border-radius: 4px;
 }
 
 #content .every-day .top .right>div:nth-child(3) .tu {
@@ -1617,7 +1621,7 @@ ol {
   top: 217px;
   left: 413px;
   background-color: white;
-  border: 1px solid lightgray;
+  border-radius: 4px;
 }
 
 #content .every-day .top .right>div>.tu>img {

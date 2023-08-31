@@ -185,22 +185,22 @@ li_first.onmouseleave = function (ev) {
 }
 //#endregion
 //#region 三级菜单栏
-var lis=document.querySelectorAll('.nav-three>ul>li:first-child>.second>li');
-var kuais=document.querySelectorAll('.nav-three>ul>li:first-child>.second>li>div')
-for (var i=0;i<lis.length;i++){
-  var li=lis[i];
-  li.index=i;
-  li.onmouseenter=function(){
-    second.style.overflow='visible';
+var lis = document.querySelectorAll('.nav-three>ul>li:first-child>.second>li');
+var kuais = document.querySelectorAll('.nav-three>ul>li:first-child>.second>li>div')
+for (var i = 0; i < lis.length; i++) {
+  var li = lis[i];
+  li.index = i;
+  li.onmouseenter = function () {
+    second.style.overflow = 'visible';
     kuais[this.index].removeAttribute('style');
-    this.style.backgroundColor='white';
+    this.style.backgroundColor = 'white';
   }
-  li.onmouseleave=function(){
+  li.onmouseleave = function () {
     this.removeAttribute('style');
-    kuais[this.index].style.display='none';
+    kuais[this.index].style.display = 'none';
   }
 }
-second.onmouseleave=function(){
+second.onmouseleave = function () {
   second.removeAttribute('style');
 }
 //#endregion
@@ -224,12 +224,15 @@ slide_box.onmouseleave = function (ev) {
   clearInterval(slide_time);
   slide_time = setInterval(function () {
     index++;
+    if (index > 3) {
+      index = 1
+    }
     slide_img.src = `./images/lun${index}.jpg`;
     for (var i = 0; i < slide_lis.length; i++) {
       slide_lis[i].style.borderBottom = '';
     }
     slide_lis[index - 1].style.borderBottom = '3px solid rgb(247, 0, 119)';
-    if (index >= 3) {
+    if (index > 4) {
       index = 0;
     }
   }, 2000)
@@ -315,7 +318,7 @@ for (var i = 0; i < slide_lis.length; i++) {
   }
   //移出
   slide_li.onmouseleave = function (ev) {
-    index= this.num+1;
+    index = this.num + 1;
     slide_time = setInterval(function () {
       index++;
       if (index === 4) {
